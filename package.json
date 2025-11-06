@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "EduChina landing page",
   "scripts": {
-    "start": "npx serve -s . -l 3000"
+    "start": "npx serve -s . -l $PORT"
   },
   "engines": {
     "node": "18.x"
