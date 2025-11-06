@@ -140,6 +140,23 @@
             height: auto;
         }
         
+        /* Image loading optimization */
+        img[loading="lazy"] {
+            content-visibility: auto;
+        }
+        
+        /* Gallery image optimization */
+        .gallery-slide img {
+            will-change: transform;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        
+        /* Prevent layout shift for images */
+        img:not([width]):not([height]) {
+            aspect-ratio: attr(width) / attr(height);
+        }
+        
         /* Custom animations */
         @keyframes fadeInUp {
             from {
@@ -835,6 +852,7 @@
                              alt="SCUT Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-xl font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SCUT</span>
                     </div>
@@ -852,6 +870,7 @@
                              alt="GDUT Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-xl font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">GDUT</span>
                     </div>
@@ -869,6 +888,7 @@
                              alt="SZU Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SZU</span>
                     </div>
@@ -886,6 +906,7 @@
                              alt="Sun Yat-sen University Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SYSU</span>
                     </div>
@@ -903,6 +924,7 @@
                              alt="ECNU Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">ECNU</span>
                     </div>
@@ -920,6 +942,7 @@
                              alt="SZTU Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SZTU</span>
                     </div>
@@ -937,6 +960,7 @@
                              alt="HIT Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">HIT</span>
                     </div>
@@ -954,6 +978,7 @@
                              alt="SUSTech Logo" 
                              class="max-w-full max-h-full object-contain"
                              loading="lazy"
+                             decoding="async"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SUSTech</span>
                     </div>
@@ -1047,6 +1072,8 @@
                             <img src="images/community/photo1.jpg" 
                                  alt="KSAC Event 1" 
                                  class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 decoding="async"
                                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full bg-gradient-to-br from-red-900 to-navy flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
                                 <div class="text-center">
@@ -1062,6 +1089,8 @@
                             <img src="images/community/photo2.jpg" 
                                  alt="KSAC Event 2" 
                                  class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 decoding="async"
                                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full bg-gradient-to-br from-navy to-red-900 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
                                 <div class="text-center">
@@ -1077,6 +1106,8 @@
                             <img src="images/community/photo3.jpg" 
                                  alt="KSAC Event 3" 
                                  class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 decoding="async"
                                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full bg-gradient-to-br from-red-800 to-blue-900 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
                                 <div class="text-center">
@@ -1092,6 +1123,8 @@
                             <img src="images/community/photo4.jpg" 
                                  alt="KSAC Event 4" 
                                  class="w-full h-full object-cover"
+                                 loading="lazy"
+                                 decoding="async"
                                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-full bg-gradient-to-br from-blue-900 to-red-800 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
                                 <div class="text-center">
