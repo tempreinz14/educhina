@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подготовка, подача документов, виза и сопровождение поступления в топовые университеты Китая.">
+    <meta name="keywords" content="поступление в Китай, университеты Китая, образование в Китае, виза в Китай">
+    <title>Поступление в Китай | EduChina</title>
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1E2C44',
+                        'whatsapp': '#25D366',
+                        'red': '#C41E3A',
+                        'red-dark': '#A01A2E'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    
+    <!-- Calendly JS -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Variables - Conversion-Optimized Palette */
+        :root {
+            --navy-blue: #1E2C44;
+            --text-dark: #333333;
+            --bg-white: #FFFFFF;
+            --whatsapp-green: #25D366;
+            --accent-red: #C41E3A;
+            --red-dark: #A01A2E;
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        /* Text wrapping utilities */
+        .wrap-balance {
+            text-wrap: balance;
+        }
+        
+        .wrap-pretty {
+            text-wrap: pretty;
+        }
+
+        /* Mobile typography optimizations */
+        .mobile-h1 { font-size: clamp(26px, 6.5vw, 56px); line-height: 1.2; }
+        .service-title { font-size: clamp(16px, 4.2vw, 20px); line-height: 1.3; }
+        .service-desc { font-size: clamp(13px, 3.6vw, 16px); line-height: 1.55; }
+        @media (max-width: 640px) {
+            .service-card { padding: 16px !important; }
+        }
+
+        /* FAQ search and anchors */
+        .faq-search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+            transition: box-shadow .2s ease, border-color .2s ease;
+        }
+        .faq-search-input:focus {
+            outline: none;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 3px rgba(196,30,58,.15);
+        }
+        .faq-chip {
+            display: inline-block;
+            padding: 6px 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 9999px;
+            background: #fff;
+            font-size: 12px;
+            color: #374151;
+            margin: 4px;
+            white-space: nowrap;
+            transition: background .2s ease, border-color .2s ease, color .2s ease;
+        }
+        .faq-chip:hover { background: #f3f4f6; }
+        
+        /* Copy width/scale control for Success Story */
+        .case-copy {
+            font-size: clamp(14px, 1vw, 17px);
+            line-height: 1.65;
+            max-width: 72ch; /* keep readable line length */
+            text-wrap: pretty;
+            overflow-wrap: anywhere;
+        }
+        .case-copy ul { max-width: 72ch; }
+        
+        /* Clip overflow on X axis (more reliable than hidden) */
+        .overflow-clip-x {
+            overflow-x: clip;
+        }
+        
+        /* Safe word wrapping to prevent columns from expanding */
+        .wrap-anywhere {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+        
+        /* Ensure images don't overflow */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* Sticky header - Dark blue for trust */
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(30, 44, 68, 0.1);
+        }
+        
+        /* Navy blue background for hero - builds trust */
+        .bg-navy {
+            background-color: var(--navy-blue);
+        }
+        
+        /* Red gradient for buttons */
+        .gradient-gold {
+            background: var(--accent-red);
+        }
+        
+        .gradient-gold:hover {
+            background: var(--red-dark);
+        }
+        
+        /* Dark blue gradient for footer */
+        .gradient-dark {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #0F1B34 100%);
+        }
+        
+        /* Button hover effects - Red with strong shadow */
+        .btn-primary {
+            transition: all 0.3s ease;
+            background: var(--accent-red);
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+            color: #ffffff;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: var(--red-dark);
+            box-shadow: 0 6px 25px rgba(160, 26, 46, 0.5);
+            color: #ffffff;
+        }
+        
+        /* 3D Card hover effects - Retell AI style */
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            position: relative;
+        }
+        
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%,
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px) translateZ(30px) rotateX(5deg) rotateY(2deg);
+            box-shadow: 
+                0 25px 60px rgba(30, 44, 68, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                0 -10px 40px rgba(0, 0, 0, 0.1) inset,
+                0 0 80px rgba(196, 30, 58, 0.15);
+        }
+        
+        .card-hover:hover::before {
+            opacity: 1;
+        }
+        
+        /* 3D Icon animation */
+        .icon-3d-float {
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        
+        .card-hover:hover .icon-3d-float {
+            transform: translateZ(40px) rotateY(15deg) scale(1.1);
+            box-shadow: 
+                0 15px 40px rgba(30, 44, 68, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                inset 0 -5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 3D Background gradient for cards */
+        .card-3d-bg {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.98) 50%,
+                rgba(248, 249, 250, 0.95) 100%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 
+                0 8px 32px rgba(30, 44, 68, 0.12),
+                0 2px 8px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Progress bar - Red */
+        .progress-bar {
+            transition: width 0.3s ease;
+            background: var(--accent-red);
+        }
+        
+        /* Accordion animation */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        /* Floating WhatsApp button - Conversion green */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            width: 60px;
+            height: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+        }
+        
+        .floating-whatsapp div {
+            background: var(--whatsapp-green) !important;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+
+        }
+        
+        /* Section dividers - Red accent */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.4), transparent);
+        }
+        
+        /* Text colors */
+        .text-navy {
+            color: var(--navy-blue);
+        }
+        
+        .text-dark-gray {
+            color: var(--text-dark);
+        }
+        
+        /* Icon colors in cards - Navy blue for trust */
+        .icon-navy {
+            background: var(--navy-blue);
+        }
+        
+        /* Subtle icon color for services - more restrained */
+        .icon-subtle {
+            background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+            box-shadow: 0 2px 8px rgba(75, 85, 99, 0.2);
+        }
+        
+        .icon-subtle:hover {
+            background: linear-gradient(135deg, #4B5563 0%, #374151 100%);
+            box-shadow: 0 4px 12px rgba(75, 85, 99, 0.3);
+        }
+        
+        /* Red accent text */
+        .text-gold {
+            color: var(--accent-red);
+        }
+        
+        /* Red accent */
+        .text-red {
+            color: var(--accent-red);
+        }
+        
+        .bg-red {
+            background-color: var(--accent-red);
+        }
+        
+        .bg-red:hover {
+            background-color: var(--red-dark);
+        }
+        
+        /* Focus states for inputs */
+        input:focus, textarea:focus {
+            border-color: var(--accent-red) !important;
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1) !important;
+        }
+        
+        /* Hover border for quiz options */
+        .quiz-option:hover {
+            border-color: var(--accent-red) !important;
+        }
+        
+        /* Gallery Styles */
+        .gallery-container {
+            position: relative;
+        }
+        
+        .gallery-slides {
+            position: relative;
+            width: 100%;
+        }
+        
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            z-index: 1;
+        }
+        
+        .gallery-slide.active {
+            opacity: 1;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-nav {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        
+        .gallery-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        
+        .gallery-dot {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            padding: 0;
+        }
+        
+        .gallery-dot.active {
+            background-color: rgba(255, 255, 255, 1) !important;
+            transform: scale(1.2);
+        }
+        
+        /* Mobile responsive for gallery */
+        @media (max-width: 768px) {
+            .gallery-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .gallery-nav i {
+                font-size: 16px;
+            }
+            
+            .gallery-nav.gallery-prev {
+                left: 10px;
+            }
+            
+            .gallery-nav.gallery-next {
+                right: 10px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            max-height: 400px;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 16px 24px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.2s;
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(196, 30, 58, 0.05);
+            color: var(--accent-red);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--navy-blue);
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            /* Header adjustments */
+            .sticky-header nav {
+                padding: 12px 16px;
+            }
+            
+            .sticky-header .btn-primary {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            /* Hero section */
+            section.min-h-screen {
+                min-height: 100vh;
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+            
+            /* Text sizes */
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            h2 {
+                font-size: 2rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* Section padding */
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            /* Buttons - larger touch targets */
+            .btn-primary {
+                padding: 14px 24px !important;
+                font-size: 16px !important;
+                min-height: 48px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Cards spacing */
+            .card-hover {
+                margin-bottom: 1rem;
+            }
+            
+            /* Grid adjustments */
+            .grid {
+                gap: 1.5rem !important;
+            }
+            
+            /* Container padding */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* FAQ improvements */
+            .glass-card button {
+                padding: 1rem !important;
+            }
+            
+            .glass-card button span {
+                font-size: 1rem !important;
+                line-height: 1.4;
+            }
+            
+            /* Success story section */
+            #success-story .grid {
+                gap: 2rem;
+            }
+            
+            #success-story img {
+                max-width: 280px;
+            }
+            
+            /* Statistics section text */
+            .text-2xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.75rem !important;
+            }
+            
+            .text-4xl {
+                font-size: 2rem !important;
+            }
+            
+            /* Calendly widget */
+            .calendly-inline-widget {
+                min-width: 100% !important;
+                height: 600px !important;
+            }
+            
+            /* Floating WhatsApp button */
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+            
+            /* Gallery on mobile */
+            .gallery-container {
+                margin: 0 -1rem;
+            }
+            
+            /* University logos grid */
+            .grid-cols-2 {
+                gap: 1rem;
+            }
+            
+            /* Package info */
+            .bg-gradient-to-r {
+                padding: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            h2 {
+                font-size: 1.75rem !important;
+            }
+            
+            .btn-primary {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem !important;
+            }
+            
+            .text-lg {
+                font-size: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-dark-gray">
+    
+    <!-- Sticky Header -->
+    <header class="sticky-header fixed top-0 left-0 right-0 z-50 shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center relative">
+            <div class="text-xl md:text-2xl font-bold text-navy">
+                <span class="text-red">Edu</span><span class="text-red">China</span>
+            </div>
+            <div class="hidden md:flex space-x-6 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+                <a href="#about" class="text-dark-gray hover:text-red transition">О нас</a>
+                <a href="#services" class="text-dark-gray hover:text-red transition">Услуги</a>
+                <a href="#faq" class="text-dark-gray hover:text-red transition">FAQ</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="#booking" onclick="scrollToBooking(); return false;" class="hidden md:inline-block btn-primary px-6 py-2 rounded-full font-semibold">
+                    Записаться
+                </a>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <i id="menu-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#about" onclick="toggleMobileMenu()">О нас</a>
+            <a href="#services" onclick="toggleMobileMenu()">Услуги</a>
+            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+            <a href="#booking" onclick="toggleMobileMenu(); scrollToBooking(); return false;" class="btn-primary mx-4 my-2 text-center">
+                Записаться на консультацию
+            </a>
+        </div>
+    </header>
+    
+    <!-- Hero Section - Navy Blue Background for Trust -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden overflow-clip-x pt-20 bg-navy">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920')] bg-cover bg-center opacity-15"></div>
+        <div class="absolute inset-0 bg-navy opacity-95"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center fade-in-up">
+            <h1 class="mobile-h1 text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Поступление в топовые университеты Китая — <span class="text-red">под ключ.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-4">
+                <span class="text-red font-semibold">Edu</span><span class="text-red font-semibold">China</span> — ваш надёжный партнёр в образовании
+            </p>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                Полное сопровождение — от стратегии и документов до визы и приезда.
+            </p>
+            <a href="#booking" onclick="scrollToBooking(); return false;" class="btn-primary px-6 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold inline-block w-full md:w-auto text-center">
+                <i class="fas fa-calendar-check mr-2"></i>
+                Записаться на консультацию
+            </a>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section id="about" class="py-16 md:py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden overflow-clip-x">
+        <!-- 3D Background effects -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-red rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-navy rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12 md:mb-20 fade-in-up">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 md:mb-6 px-4" style="text-shadow: 0 2px 10px rgba(30, 44, 68, 0.1);">
+                    Почему выбирают нас
+                </h2>
+                <div class="section-divider w-32 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+                <!-- Card 1 -->
+                <div class="card-hover card-3d-bg p-8 rounded-3xl fade-in-up relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red opacity-5 rounded-full blur-2xl"></div>
+                    <div class="w-20 h-20 icon-navy icon-3d-float rounded-full flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-user-tie text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-navy relative z-10">Индивидуальная стратегия</h3>
+                    <p class="text-dark-gray text-center opacity-80 relative z-10">Индивидуальная стратегия поступления под ваш профиль.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card-hover card-3d-bg p-8 rounded-3xl fade-in-up relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-navy opacity-5 rounded-full blur-2xl"></div>
+                    <div class="w-20 h-20 icon-navy icon-3d-float rounded-full flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-navy relative z-10">Прямые контакты</h3>
+                    <p class="text-dark-gray text-center opacity-80 relative z-10">Работаем напрямую с китайскими университетами.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="card-hover card-3d-bg p-8 rounded-3xl fade-in-up relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red opacity-5 rounded-full blur-2xl"></div>
+                    <div class="w-20 h-20 icon-navy icon-3d-float rounded-full flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-home text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-navy relative z-10">Полная поддержка</h3>
+                    <p class="text-dark-gray text-center opacity-80 relative z-10">Помогаем с визой и жильём.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="card-hover card-3d-bg p-8 rounded-3xl fade-in-up relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-navy opacity-5 rounded-full blur-2xl"></div>
+                    <div class="w-20 h-20 icon-navy icon-3d-float rounded-full flex items-center justify-center mb-6 mx-auto relative z-10">
+                        <i class="fas fa-star text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-navy relative z-10">Проверенный опыт</h3>
+                    <p class="text-dark-gray text-center opacity-80 relative z-10">Реальные истории студентов и родителей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="py-16 md:py-20 bg-navy relative overflow-hidden overflow-clip-x">
+        <!-- Enhanced background effects -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-red rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-red rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 0.5s;"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center fade-in-up mb-12">
+                <p class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 leading-tight px-4">
+                    В этом году отправили <span class="text-white inline-block" style="color: #60A5FA; text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);">более 80 студентов</span> в такие города как
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-12">
+                    <div class="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20 transition-all hover:bg-opacity-20 hover:scale-105">
+                        <i class="fas fa-map-marker-alt text-red text-xl"></i>
+                        <span class="text-white text-base md:text-lg font-semibold">Гуанчжоу</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20 transition-all hover:bg-opacity-20 hover:scale-105">
+                        <i class="fas fa-map-marker-alt text-red text-xl"></i>
+                        <span class="text-white text-base md:text-lg font-semibold">Шэньчжэнь</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20 transition-all hover:bg-opacity-20 hover:scale-105">
+                        <i class="fas fa-map-marker-alt text-red text-xl"></i>
+                        <span class="text-white text-base md:text-lg font-semibold">Пекин</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20 transition-all hover:bg-opacity-20 hover:scale-105">
+                        <i class="fas fa-map-marker-alt text-red text-xl"></i>
+                        <span class="text-white text-base md:text-lg font-semibold">Шанхай</span>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-8 md:mb-12 px-4" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">
+                    Партнёрские университеты
+                </h3>
+            </div>
+            
+            <!-- Universities Grid - Enhanced -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+                <!-- SCUT -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/scut.png" 
+                             alt="SCUT Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-xl font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SCUT</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">South China University of Technology</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Гуанчжоу
+                    </p>
+                </div>
+                
+                <!-- GDUT -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/gdut.png" 
+                             alt="GDUT Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-xl font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">GDUT</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Guangdong University of Technology</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Гуанчжоу
+                    </p>
+                </div>
+                
+                <!-- Shenzhen University -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/szu.png" 
+                             alt="SZU Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SZU</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Shenzhen University</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Шэньчжэнь
+                    </p>
+                </div>
+                
+                <!-- Sun Yat-sen University -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/sunyatsen.png" 
+                             alt="Sun Yat-sen University Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SYSU</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Sun Yat-sen University</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Гуанчжоу
+                    </p>
+                </div>
+                
+                <!-- East China Normal University -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/eastchinanormaluniversity.png" 
+                             alt="ECNU Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">ECNU</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">East China Normal University</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Шанхай
+                    </p>
+                </div>
+                
+                <!-- Shenzhen Technology University -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/sztu.png" 
+                             alt="SZTU Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SZTU</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Shenzhen Technology University</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Шэньчжэнь
+                    </p>
+                </div>
+                
+                <!-- HIT Shenzhen -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/hit.png" 
+                             alt="HIT Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">HIT</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Harbin Institute of Technology</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Шэньчжэнь
+                    </p>
+                </div>
+                
+                <!-- Southern University of Science and Technology -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-5 md:p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-xl p-2 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="images/logos/sustech.png" 
+                             alt="SUSTech Logo" 
+                             class="max-w-full max-h-full object-contain"
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="text-sm md:text-lg font-bold text-navy absolute inset-0 flex items-center justify-center" style="display:none;">SUSTech</span>
+                    </div>
+                    <p class="text-white text-xs md:text-sm font-semibold mb-1 leading-tight">Southern University of Science and Technology</p>
+                    <p class="text-gray-300 text-xs mt-1 flex items-center justify-center gap-1">
+                        <i class="fas fa-map-marker-alt text-red text-xs"></i>
+                        Шэньчжэнь
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 md:mt-12 fade-in-up">
+                <div class="inline-flex items-center space-x-3 bg-white bg-opacity-10 backdrop-blur-sm px-6 py-3 rounded-full border border-white border-opacity-20">
+                    <i class="fas fa-handshake text-red text-xl"></i>
+                    <p class="text-white text-base md:text-lg font-semibold">
+                        Официальные партнёры данных университетов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Kazakhstan Community Section -->
+    <section id="kazakhstan-community" class="py-20 bg-navy relative overflow-hidden overflow-clip-x">
+        <!-- Enhanced background effects -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-red rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-red rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 px-4" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);">
+                    Казахстанское сообщество в Китае
+                </h2>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-200 mb-4 md:mb-6 px-4">
+                    Вы не будете одни — присоединяйтесь к <span class="text-red font-semibold">12,000+</span> казахстанских студентов
+                </p>
+                <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+                    KSAC (Kazakhstan Students Association in China) — крупнейшая студенческая организация казахстанцев в Китае с отделениями в 9 городах: <span class="text-white font-semibold">Пекин, Шанхай, Нанкин, Урумчи, Ухань, Чунцин, Далянь, Гуанчжоу, Шэньчжэнь и Сиань</span>.
+                </p>
+            </div>
+            
+            <!-- Benefits Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+                <!-- Card 1 -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <i class="fas fa-hands-helping text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Поддержка соотечественников</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Помощь с адаптацией, решением бытовых вопросов и общением на родном языке</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <i class="fas fa-calendar-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Культурные мероприятия</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ежегодный Курултай, празднование Наурыза, спортивные соревнования</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <i class="fas fa-briefcase text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Карьерные возможности</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ярмарки вакансий с китайскими компаниями, стажировки и трудоустройство</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="group bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 text-center transition-all duration-300 hover:bg-opacity-20 hover:scale-105 hover:shadow-2xl fade-in-up border border-white border-opacity-20">
+                    <div class="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Networking</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Знакомства с казахстанцами из разных городов и университетов</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Section -->
+            <div class="mt-16 fade-in-up">
+                <div class="gallery-container relative max-w-5xl mx-auto">
+                    <!-- Gallery Slides -->
+                    <div class="gallery-slides relative overflow-hidden rounded-2xl shadow-2xl" style="aspect-ratio: 16/9;">
+                        <!-- Slide 1 -->
+                        <div class="gallery-slide active">
+                            <img src="images/community/photo1.jpg" 
+                                 alt="KSAC Event 1" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full bg-gradient-to-br from-red-900 to-navy flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
+                                <div class="text-center">
+                                    <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                                    <p>Фото 1</p>
+                                    <p class="text-sm font-normal mt-2">Добавьте фотографию</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="gallery-slide">
+                            <img src="images/community/photo2.jpg" 
+                                 alt="KSAC Event 2" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full bg-gradient-to-br from-navy to-red-900 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
+                                <div class="text-center">
+                                    <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                                    <p>Фото 2</p>
+                                    <p class="text-sm font-normal mt-2">Добавьте фотографию</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="gallery-slide">
+                            <img src="images/community/photo3.jpg" 
+                                 alt="KSAC Event 3" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full bg-gradient-to-br from-red-800 to-blue-900 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
+                                <div class="text-center">
+                                    <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                                    <p>Фото 3</p>
+                                    <p class="text-sm font-normal mt-2">Добавьте фотографию</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 -->
+                        <div class="gallery-slide">
+                            <img src="images/community/photo4.jpg" 
+                                 alt="KSAC Event 4" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full bg-gradient-to-br from-blue-900 to-red-800 flex items-center justify-center text-white text-2xl font-bold" style="display:none;">
+                                <div class="text-center">
+                                    <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                                    <p>Фото 4</p>
+                                    <p class="text-sm font-normal mt-2">Добавьте фотографию</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="gallery-nav gallery-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left text-xl"></i>
+                    </button>
+                    <button class="gallery-nav gallery-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg" aria-label="Next slide">
+                        <i class="fas fa-chevron-right text-xl"></i>
+                    </button>
+                    
+                    <!-- Dots Navigation -->
+                    <div class="gallery-dots flex justify-center mt-6 space-x-2">
+                        <button class="gallery-dot active w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all duration-300" aria-label="Slide 1"></button>
+                        <button class="gallery-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all duration-300" aria-label="Slide 2"></button>
+                        <button class="gallery-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all duration-300" aria-label="Slide 3"></button>
+                        <button class="gallery-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all duration-300" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Story Section -->
+    <section id="success-story" class="w-full bg-white relative overflow-x-hidden overflow-clip-x">
+        <div class="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 gap-8 items-start">
+                <!-- Left Column: Text Content -->
+                <div class="fade-in-up order-2 lg:order-2 min-w-0">
+                    <!-- Badge -->
+                    <div class="mb-4">
+                        <span class="inline-flex items-center bg-red text-white px-4 py-2 rounded-full shadow-md text-[clamp(12px,1vw,14px)] font-bold max-w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                            <i class="fas fa-trophy mr-2 shrink-0"></i>
+                            Успешное поступление 2025
+                        </span>
+                    </div>
+                    
+                    <!-- Main Heading -->
+                    <h2 class="font-extrabold text-navy mb-6 leading-[1.2] text-[clamp(28px,4vw,48px)] wrap-balance wrap-anywhere">
+                        От сомнений до Шанхая за 6 недель
+                    </h2>
+                    
+                    <!-- Story Text -->
+                    <div class="case-copy text-dark-gray space-y-4 mb-6">
+                        <p>
+                            В середине июля 2025 года Кайрат принял неожиданное решение — не оставаться в Казахстане, а поступить в университет Китая. Проблема была в том, что большинство университетов уже закрыли прием заявок на осенний семестр.
+                        </p>
+                        <p>
+                            Кайрат обратился к нам в конце июля. Многие агентства сказали бы, что уже поздно. Но благодаря нашим прямым партнерским отношениям с топовыми университетами Китая, мы открыли для него возможность.
+                        </p>
+                        
+                        <p class="font-semibold text-navy mb-3 text-[clamp(16px,1.2vw,20px)]">За 6 недель мы:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2">
+                                <span class="text-red text-[clamp(18px,1.4vw,20px)] font-bold mt-[2px] shrink-0">✓</span>
+                                <span class="wrap-anywhere">Подготовили и подали все документы</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-red text-[clamp(18px,1.4vw,20px)] font-bold mt-[2px] shrink-0">✓</span>
+                                <span class="wrap-anywhere">Получили специальное разрешение от университета на позднюю подачу</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-red text-[clamp(18px,1.4vw,20px)] font-bold mt-[2px] shrink-0">✓</span>
+                                <span class="wrap-anywhere">Организовали ускоренное рассмотрение заявки</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-red text-[clamp(18px,1.4vw,20px)] font-bold mt-[2px] shrink-0">✓</span>
+                                <span class="wrap-anywhere">Оформили визу в сжатые сроки</span>
+                            </li>
+                        </ul>
+                        
+                        <p class="mt-6 wrap-anywhere">
+                            <strong>Результат:</strong> в сентябре 2025 года Кайрат начал обучение на факультете International Business в <strong class="wrap-balance wrap-anywhere">East China Normal University</strong>.
+                        </p>
+                    </div>
+                    
+                    
+                    
+                    <!-- CTA Button -->
+                    <div class="fade-in-up">
+                        <a href="#booking" onclick="scrollToBooking(); return false;" class="btn-primary px-6 lg:px-8 py-3 lg:py-4 rounded-full text-[clamp(14px,1.2vw,18px)] font-semibold inline-flex items-center justify-center w-full md:w-auto text-center">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Начать свою историю успеха
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Photo -->
+                <div class="fade-in-up order-1 lg:order-1 flex justify-center lg:justify-start min-w-0">
+                    <div class="relative w-full max-w-[560px] overflow-clip-x">
+                        <!-- Student Photo -->
+                        <figure class="mx-auto flex flex-col items-center">
+                            <div class="relative w-[min(560px,90vw)] h-[min(560px,90vw)] max-w-full aspect-square overflow-clip-x rounded-full">
+                                <img src="images/case/368bcd8b09f686174dc9050e5e9d39e1.JPG" 
+                                     alt="Кайрат - студент East China Normal University" 
+                                     class="w-full h-full rounded-full object-cover shadow-2xl border-4 border-white ring-4 ring-gray-100"
+                                     loading="lazy"
+                                     decoding="async"
+                                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22%3EФото студента%3C/text%3E%3C/svg%3E';">
+                            </div>
+                            
+                            <!-- Student Info -->
+                            <div class="text-center mt-6">
+                                <div class="flex items-center justify-center gap-3 mb-2">
+                                    <h3 class="text-[clamp(20px,2vw,28px)] font-bold text-navy">Кайрат</h3>
+                                    <span class="text-[clamp(24px,2.5vw,32px)]">🇰🇿</span>
+                                </div>
+                                <p class="text-gray-600 mb-4 text-[clamp(14px,1.2vw,18px)]">18 лет</p>
+                                
+                                <!-- University -->
+                                <div class="inline-flex items-center gap-3 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200">
+                                    <img src="images/logos/eastchinanormaluniversity.png" 
+                                         alt="East China Normal University Logo" 
+                                         class="w-8 h-8 object-contain flex-shrink-0"
+                                         loading="lazy"
+                                         onerror="this.style.display='none';">
+                                    <span class="text-[clamp(12px,1vw,14px)] font-semibold text-navy wrap-balance wrap-anywhere">East China Normal University</span>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 px-4">Что входит в пакет услуг</h2>
+                <div class="section-divider w-32 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Service 1 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-bullseye text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Application Strategy</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Выбор специальности, программы, исследовательских направлений.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-list text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Creating a College List</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Составление списка университетов по целям и бюджету.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-pen-fancy text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Drafting & Editing Essays</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Редактирование и написание мотивационных писем.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-file-alt text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Creating CV</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Оформление академического резюме.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-file-upload text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Подача документов в университеты</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Подача всех документов в выбранные университеты Китая.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="card-hover bg-gradient-to-br from-gray-50 to-white p-6 service-card rounded-xl border border-gray-200 fade-in-up">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 icon-subtle rounded-lg flex items-center justify-center mr-4 flex-shrink-0 transition-all">
+                            <i class="fas fa-passport text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="service-title text-xl font-bold text-navy mb-2">Visa Process Support</h3>
+                            <p class="service-desc text-dark-gray opacity-80">Помощь с визовыми документами.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Package Info -->
+            <div class="bg-gradient-to-r from-red-50 to-red-100 border-l-4 border-red p-6 rounded-xl mb-8 fade-in-up">
+                <p class="text-lg text-dark-gray">
+                    <i class="fas fa-briefcase text-red mr-2"></i>
+                    <strong>Полный пакет включает все 6 услуг — стоимость обсуждается на консультации.</strong>
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <a href="#booking" onclick="scrollToBooking(); return false;" class="btn-primary px-6 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold inline-block w-full md:w-auto">
+                    Записаться на консультацию
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Booking Section -->
+    <section id="booking" class="py-16 md:py-20 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-white rounded-2xl shadow-sm p-6 md:p-10">
+            <div class="text-center mb-8 md:mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-navy mb-4">Запишитесь на консультацию</h2>
+                <div class="section-divider w-32 mx-auto mt-4"></div>
+                <p class="text-xl text-dark-gray opacity-80 mt-6 max-w-2xl mx-auto">
+                    Выберите удобное время для встречи и обсудим ваши цели поступления в Китай
+                </p>
+            </div>
+            
+            <!-- Calendly inline widget -->
+            <div class="calendly-inline-widget fade-in-up w-full" 
+                 data-url="https://calendly.com/ilyas-suleymenov-90/30min" 
+                 style="min-width:320px;height:700px;border-radius: 12px; overflow: hidden;">
+            </div>
+            
+            <!-- Fallback button if Calendly doesn't load -->
+            <div class="text-center mt-6 hidden" id="calendly-fallback">
+                <a href="https://calendly.com/ilyas-suleymenov-90/30min" target="_blank" class="btn-primary px-12 py-5 rounded-full text-xl font-semibold inline-block">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Выбрать время встречи
+                </a>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12 md:mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4 px-4">Часто задаваемые вопросы</h2>
+                <div class="section-divider w-32 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- FAQ quick search -->
+            <div class="mb-6 md:mb-8">
+                <input id="faq-search" type="search" class="faq-search-input" placeholder="Поиск по FAQ: введите слово или вопрос..." aria-label="Поиск по FAQ">
+                <div id="faq-index" class="mt-3 flex flex-wrap"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Блок 1: Документы и подача -->
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(1)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Какие документы нужны для подачи?</span>
+                        <i id="faq-icon-1" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-1" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90">
+                            <ul class="list-disc list-inside space-y-3 text-base">
+                                <li>Загранпаспорт (действителен минимум 1 год)</li>
+                                <li>Аттестат о среднем образовании с переводом и нотариальным заверением</li>
+                                <li>Медицинская справка (форма 086-у)</li>
+                                <li>Фотографии 3x4 (6-8 штук)</li>
+                                <li>Мотивационное письмо</li>
+                            </ul>
+                            <p class="mt-4"><strong>Важно:</strong> Все документы переводятся на китайский или английский язык и нотариально заверяются. Мы помогаем с переводом и апостилем.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(3)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Можно ли подавать, если я еще учусь в 11 классе?</span>
+                        <i id="faq-icon-3" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-3" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Да! Можно начать процесс подачи со справкой об обучении. После получения аттестата в июне просто дополняете документы. Главное — начать процесс заранее.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 2: IELTS и языковые требования -->
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(4)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Можно ли поступить без IELTS?</span>
+                        <i id="faq-icon-4" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-4" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Да! Если у вас нет IELTS или языкового сертификата, вы можете поступить на подготовительный год для изучения китайского или английского языка. После успешного завершения подготовительного года переходите на основную программу бакалавриата.<br><br>
+                            <strong>Если у вас есть IELTS:</strong> Для бакалавриата на английском языке обычно требуется от 5.5-6.0. Точные требования зависят от университета и программы.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(6)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Нужно ли знать китайский язык?</span>
+                        <i id="faq-icon-6" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-6" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Нет, если поступаете на англоязычную программу. Для программ на китайском языке нужен HSK 4-6 уровня. Если языковой подготовки нет — начинаете с подготовительного года.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 3: Сроки и процесс -->
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(7)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Сколько времени занимает процесс поступления?</span>
+                        <i id="faq-icon-7" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-7" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            С момента начала работы с нами весь процесс занимает около 2 месяцев до подачи документов в университеты:
+                            <ul class="list-disc list-inside space-y-3 mt-3">
+                                <li>Разработка стратегии поступления (выбор специальностей и программ) — 1 неделя</li>
+                                <li>Составление списка университетов — 2 недели</li>
+                                <li>Написание и редактирование эссе и мотивационных писем — 4 недели</li>
+                                <li>Создание CV — 1 неделя</li>
+                                <li>Подготовка к собеседованиям (если требуются) — 2 недели</li>
+                                <li>Подача документов в университеты</li>
+                            </ul>
+                            После получения приглашения от университета помогаем с оформлением визы и всеми необходимыми процедурами для отъезда.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card faq-item rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(8)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Когда начинается обучение?</span>
+                        <i id="faq-icon-8" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-8" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Открыт набор на 2026 год. Intake: осенний семестр (сентябрь 2026). Мы начнём работу с вами и в течение 2 месяцев подадим все документы в университеты. Рекомендуем начинать процесс с марта-апреля 2026 года.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(9)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Можно ли подавать в несколько университетов?</span>
+                        <i id="faq-icon-9" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-9" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Да! Мы рекомендуем подавать в 3-5 университетов для увеличения шансов на поступление.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 4: Виза и поездка -->
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(10)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Как получить студенческую визу?</span>
+                        <i id="faq-icon-10" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-10" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            После получения официального приглашения из университета (документ JW201/202) мы помогаем подготовить все необходимые документы для подачи в китайское консульство или визовый центр и консультируем на каждом этапе. Процесс обычно занимает 2-4 недели.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 5: Обучение -->
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(13)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">На каком языке проходит обучение?</span>
+                        <i id="faq-icon-13" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-13" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            На выбор доступны три варианта:
+                            <ul class="list-disc list-inside space-y-3 mt-3">
+                                <li>Бакалавриат на английском языке</li>
+                                <li>Бакалавриат на китайском языке</li>
+                                <li>Подготовительный год (изучение языка перед основной программой)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(15)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Признается ли диплом в моей стране?</span>
+                        <i id="faq-icon-15" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-15" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Китайские университеты из нашего списка партнеров аккредитованы на международном уровне. Дипломы признаются в странах Центральной Азии, СНГ и по всему миру при правильном оформлении документов.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 6: Стоимость обучения и проживание -->
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(16)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Сколько стоит обучение?</span>
+                        <i id="faq-icon-16" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-16" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            <ul class="list-disc list-inside space-y-3">
+                                <li>Бакалавриат на английском языке: от $3,000 до $6,000 в год</li>
+                                <li>Бакалавриат на китайском языке: от $2,500 до $5,000 в год</li>
+                                <li>Подготовительный год (изучение языка): от $2,000 до $4,000 в год</li>
+                            </ul>
+                            Стоимость зависит от университета и специальности.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(18)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Сколько нужно денег на жизнь?</span>
+                        <i id="faq-icon-18" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-18" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Примерные ежемесячные расходы на проживание, питание, транспорт и личные нужды:
+                            <ul class="list-disc list-inside space-y-3 mt-3">
+                                <li>Небольшие города: $250-400 в месяц</li>
+                                <li>Крупные города (центр Пекина, Шанхая, Шэньчжэня): $400-600 в месяц</li>
+                                <li>Общежитие: от $50 до $200 в месяц в зависимости от города и условий</li>
+                            </ul>
+                            <p class="mt-4"><strong>Проживание:</strong> Студенты живут в общежитиях на территории кампуса или снимают квартиру поблизости. Общежития оборудованы всем необходимым: Wi-Fi, кухня, прачечная, комнаты на 2-4 человека.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 7: После поступления -->
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(21)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Поддерживаете ли вы студентов после поступления?</span>
+                        <i id="faq-icon-21" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-21" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Мы предоставляем консультации на этапе поступления и помощь с оформлением документов. Для дополнительной поддержки в период обучения уточняйте условия отдельно.<br><br>
+                            <strong>После приезда в Китай:</strong> Необходимо пройти регистрацию в местном отделении полиции (в течение 24 часов после заселения), оформить студенческий билет в университете, открыть банковский счет, купить китайскую SIM-карту. Мы консультируем по всем этим вопросам.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 8: Особые случаи -->
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(22)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Можно ли поступить с невысокими оценками в аттестате?</span>
+                        <i id="faq-icon-22" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-22" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Да! Требования к оценкам различаются в университетах. Некоторые вузы более гибко подходят к баллам, особенно если у вас сильное мотивационное письмо и другие достижения.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl shadow-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
+                    <button onclick="toggleFAQ(24)" class="w-full text-left p-6 md:p-8 flex justify-between items-center hover:bg-white hover:bg-opacity-50 transition-all duration-300 group">
+                        <span class="text-lg md:text-xl font-bold text-navy pr-4">Что если я передумаю или не получу визу?</span>
+                        <i id="faq-icon-24" class="fas fa-chevron-down text-red text-xl transition-transform duration-300 flex-shrink-0 group-hover:scale-110"></i>
+                    </button>
+                    <div id="faq-content-24" class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8 text-dark-gray opacity-90 text-base">
+                            Условия возврата оплаты и гарантии обсуждаются индивидуально на этапе заключения договора. Мы делаем всё возможное для успешного поступления и получения визы при правильно подготовленных документах.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Важное примечание -->
+            <div class="mt-12 p-6 md:p-8 glass-card rounded-2xl border-l-4 border-red shadow-xl fade-in-up">
+                <p class="text-dark-gray text-base leading-relaxed">
+                    <strong class="text-red text-lg">Важное примечание:</strong> Все условия сотрудничества, стоимость услуг и детали процесса обсуждаются индивидуально после консультации. Мы не предоставляем юридические услуги, а оказываем информационную и организационную поддержку при поступлении в китайские университеты.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact & Footer Section -->
+    <section id="contact" class="py-20 gradient-dark text-white overflow-clip-x">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Свяжитесь с нами</h2>
+                <div class="section-divider w-32 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8615112380059" target="_blank" class="card-hover bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: var(--whatsapp-green);">
+                        <i class="fab fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">WhatsApp</h3>
+                    <p class="text-gray-300">+8615112380059</p>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:info@educhina.com" class="card-hover bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <p class="text-gray-300">info@educhina.com</p>
+                </a>
+            </div>
+            
+            <div class="text-center mb-8">
+                <p class="text-gray-300 mb-2">
+                    <i class="fas fa-map-marker-alt mr-2 text-red"></i>
+                    Shenzhen, China (Шэньчжэнь, Китай)
+                </p>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 EduChina. All rights reserved.
+                </p>
+            </footer>
+        </div>
+    </section>
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8615112380059?text=Здравствуйте,%20хочу%20узнать%20о%20поступлении%20в%20Китай" target="_blank" class="floating-whatsapp">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl" style="background: var(--whatsapp-green);">
+            <i class="fab fa-whatsapp text-3xl text-white"></i>
+        </div>
+    </a>
+    
+    <!-- JavaScript -->
+    <script>
+        // Smooth scroll to booking
+        function scrollToBooking() {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+                bookingSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Close mobile menu if open
+            const menu = document.getElementById('mobile-menu');
+            if (menu && menu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+        
+        // Initialize Calendly
+        window.addEventListener('load', function() {
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/ilyas-suleymenov-90/30min',
+                    parentElement: document.querySelector('.calendly-inline-widget'),
+                    prefill: {},
+                    utm: {}
+                });
+            } else {
+                // Fallback if Calendly doesn't load
+                setTimeout(function() {
+                    const widget = document.querySelector('.calendly-inline-widget');
+                    if (widget && !widget.querySelector('iframe')) {
+                        document.getElementById('calendly-fallback').classList.remove('hidden');
+                    }
+                }, 3000);
+            }
+        });
+        
+        // Init FAQ search/anchors after DOM ready
+        window.addEventListener('DOMContentLoaded', initFaqIndexAndSearch);
+        
+        // FAQ Accordion
+        function toggleFAQ(num) {
+            const content = document.getElementById(`faq-content-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('[id^="faq-icon-"]').forEach(ic => {
+                    ic.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open clicked FAQ
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // FAQ anchors and search
+        function initFaqIndexAndSearch() {
+            const items = Array.from(document.querySelectorAll('#faq .faq-item'));
+            const indexEl = document.getElementById('faq-index');
+            const searchEl = document.getElementById('faq-search');
+            if (!items.length) return;
+
+            // Assign ids and build index chips
+            items.forEach((card, i) => {
+                if (!card.id) card.id = `faq-${i+1}`;
+            });
+
+            if (indexEl) {
+                indexEl.innerHTML = '';
+                items.forEach((card) => {
+                    const titleSpan = card.querySelector('button span');
+                    if (!titleSpan) return;
+                    const a = document.createElement('a');
+                    a.href = `#${card.id}`;
+                    a.className = 'faq-chip';
+                    a.textContent = titleSpan.textContent.trim();
+                    indexEl.appendChild(a);
+                });
+            }
+
+            // Search filter
+            if (searchEl) {
+                const normalize = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
+                searchEl.addEventListener('input', () => {
+                    const q = normalize(searchEl.value);
+                    items.forEach((card) => {
+                        const text = normalize(card.innerText);
+                        const match = q === '' || text.includes(q);
+                        card.style.display = match ? '' : 'none';
+                        // collapse if hidden
+                        if (!match) {
+                            const acc = card.querySelector('.accordion-content');
+                            if (acc) acc.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section > div').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.sticky-header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                menu.classList.add('active');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (menu && toggle && !menu.contains(event.target) && !toggle.contains(event.target)) {
+                if (menu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+        
+        // Close mobile menu on window resize (if desktop)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                const menu = document.getElementById('mobile-menu');
+                const icon = document.getElementById('menu-icon');
+                if (menu && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        });
+        
+        // Gallery Slider
+        (function() {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const prevBtn = document.querySelector('.gallery-prev');
+            const nextBtn = document.querySelector('.gallery-next');
+            
+            if (!slides.length) return;
+            
+            let currentSlide = 0;
+            let autoSlideInterval;
+            
+            // Function to show specific slide
+            function showSlide(index) {
+                // Remove active class from all slides and dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Ensure index is within bounds
+                if (index >= slides.length) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = slides.length - 1;
+                } else {
+                    currentSlide = index;
+                }
+                
+                // Add active class to current slide and dot
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Function to go to next slide
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            
+            // Function to go to previous slide
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+            
+            // Function to start auto-slide
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 4000); // 4 seconds
+            }
+            
+            // Function to stop auto-slide
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+            }
+            
+            // Event listeners for navigation buttons
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    stopAutoSlide();
+                    nextSlide();
+                    startAutoSlide();
+                });
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    stopAutoSlide();
+                    prevSlide();
+                    startAutoSlide();
+                });
+            }
+            
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    stopAutoSlide();
+                    showSlide(index);
+                    startAutoSlide();
+                });
+            });
+            
+            // Pause auto-slide on hover
+            const galleryContainer = document.querySelector('.gallery-container');
+            if (galleryContainer) {
+                galleryContainer.addEventListener('mouseenter', stopAutoSlide);
+                galleryContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+            
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            if (galleryContainer) {
+                galleryContainer.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                    stopAutoSlide();
+                }, { passive: true });
+                
+                galleryContainer.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                    startAutoSlide();
+                }, { passive: true });
+            }
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left - next slide
+                        nextSlide();
+                    } else {
+                        // Swipe right - previous slide
+                        prevSlide();
+                    }
+                }
+            }
+            
+            // Initialize - show first slide and start auto-slide
+            showSlide(0);
+            startAutoSlide();
+        })();
+        
+        // Try multiple logo paths/extensions if the first one fails
+        function tryLogoVariants(imgEl) {
+            const names = [
+                'officiallogo-removebg-preview',
+                'officiallogo',
+                '37B774B8-E06D-4836-95FB-914B653B009A',
+                'logo',
+                'educhina',
+                'EduChina'
+            ];
+            const dirs = [
+                'images/educhinalogo/',
+                'images/educhina logo/',
+                'images/educhina/',
+                'images/logo/',
+                'images/logos/',
+                'images/'
+            ];
+            const exts = ['.jpg', '.jpeg', '.png', '.webp', '.svg'];
+            const candidates = [];
+            dirs.forEach(d => names.forEach(n => exts.forEach(e => candidates.push(`${d}${n}${e}`))));
+            let i = 0;
+            function tryNext() {
+                if (i >= candidates.length) {
+                    console.warn('EduChina logo not found in expected locations:', candidates);
+                    imgEl.style.display = 'none';
+                    const fallback = imgEl.nextElementSibling;
+                    if (fallback) fallback.style.display = 'block';
+                    return;
+                }
+                const nextSrc = candidates[i++];
+                imgEl.onerror = tryNext;
+                imgEl.src = nextSrc;
+            }
+            tryNext();
+        }
+        
+    </script>
+</body>
+</html>
+
+
