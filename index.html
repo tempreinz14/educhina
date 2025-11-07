@@ -619,14 +619,27 @@
                 gap: 1.5rem;
             }
             
-            #success-story .relative.w-\\[min\\(560px\\,90vw\\)\\] {
+            /* Ensure circular photo on mobile */
+            #success-story figure {
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            
+            #success-story .relative.rounded-full {
                 width: 200px !important;
                 height: 200px !important;
                 max-width: 200px !important;
+                border-radius: 50% !important;
+                overflow: hidden !important;
             }
             
-            #success-story img {
-                max-width: 200px !important;
+            #success-story .relative.rounded-full img {
+                width: 100% !important;
+                height: 100% !important;
+                border-radius: 50% !important;
+                object-fit: cover !important;
             }
             
             #success-story h2 {
@@ -1265,11 +1278,11 @@
                 </div>
                 
                 <!-- Right Column: Photo -->
-                <div class="fade-in-up order-1 lg:order-1 flex justify-center lg:justify-start min-w-0">
-                    <div class="relative w-full max-w-[560px] overflow-clip-x">
+                <div class="fade-in-up order-1 lg:order-1 flex justify-center items-center min-w-0 w-full">
+                    <div class="relative w-full flex justify-center items-center">
                         <!-- Student Photo -->
-                        <figure class="mx-auto flex flex-col items-center">
-                            <div class="relative w-[200px] h-[200px] md:w-[min(560px,90vw)] md:h-[min(560px,90vw)] max-w-full aspect-square overflow-clip-x rounded-full">
+                        <figure class="flex flex-col items-center w-full">
+                            <div class="relative w-[200px] h-[200px] md:w-[min(400px,90vw)] md:h-[min(400px,90vw)] aspect-square rounded-full overflow-hidden mx-auto">
                                 <img src="images/case/368bcd8b09f686174dc9050e5e9d39e1.JPG" 
                                      alt="Кайрат - студент East China Normal University" 
                                      class="w-full h-full rounded-full object-cover shadow-2xl border-4 border-white ring-4 ring-gray-100"
